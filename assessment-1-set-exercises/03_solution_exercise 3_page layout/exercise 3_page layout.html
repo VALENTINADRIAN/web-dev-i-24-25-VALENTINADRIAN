@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<!-- This tells the browser it's an HTML5 page -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J's Gallery</title>
+
+    <!-- Import a font for the main title -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Styles for the whole page */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* A wrapper to centre the content */
+        .wrapper {
+            max-width: 1000px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            padding: 20px 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        /* --- Header and Nav --- */
+        
+        /* Centre the header text */
+        header {
+            text-align: center;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px; /* Space below header */
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3.5em;
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Styling for the nav links */
+        nav ul {
+            list-style: none;
+            margin: 10px 0 0 0;
+            padding: 0;
+            /* Centre the nav links */
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #007AFF;
+            font-weight: 500;
+            font-size: 1.1em;
+        }
+
+        /* --- Main Content Layout --- */
+
+        /* Top section layout */
+        .top-content {
+            /* Flexbox for two columns */
+            display: flex;
+            flex-wrap: wrap; 
+            gap: 30px;
+            padding: 20px 0;
+        }
+
+        /* The text part */
+        .top-content article {
+            /* Text column */
+            flex-basis: 60%;
+            flex-grow: 1;
+            min-width: 300px;
+        }
+        
+        /* The main cow image part */
+        .top-content figure {
+            /* Image column */
+            flex-basis: 35%;
+            flex-grow: 1;
+            margin: 0;
+        }
+
+        .top-content img {
+            width: 100%;
+            border-radius: 8px; /* Make top image rounded */
+        }
+
+        /* --- Gallery Layout --- */
+
+        /* The main gallery grid */
+        .gallery {
+            /* Using flexbox for the grid layout */
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        /* Each gallery item */
+        .gallery-item {
+            /* All items are same height */
+            height: 350px;
+            
+            /* Flex rules for the 2-column grid */
+            flex-grow: 1;
+            flex-basis: 45%;
+
+            margin: 0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        /* This is for cropping */
+        .gallery-item img,
+        .gallery-item video {
+            width: 100%;
+            height: 100%;
+            /* Crops the media to fit */
+            object-fit: cover;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- Main page wrapper -->
+    <div class="wrapper">
+
+        <!-- Header section with title and nav -->
+        <header>
+            <h1>J's Gallery</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Gallery</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Main content area -->
+        <main>
+
+            <!-- Top section: text and main image -->
+            <section class="top-content">
+                <!-- The text part -->
+                <article>
+                    <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Praesent mollis adipiscing per id libero libero. Tempus pretium netus molestie scelerisque facilisis tristique volutpat ultricies. Nostra ligula ac pulvinar rutrum non rhoncus mauris facilisi. Quisque maximus commodo sollicitudin, montes congue imperdiet. Est malesuada vivamus vestibulum ante aenean class. Per integer aptent ullamcorper sagittis posuere dignissim morbi scelerisque. Fringilla primis sagittis lorem erat integer; vulputate nullam. Porta purus habitant id fermentum nec ex, proin mauris sem.</p>
+                    <p>Lectus ultrices nibh lobortis tempus facilisis sit conubia taciti. Non torquent amet nibh elit ante fermentum praesent cras. Et suspendisse egestas eros erat aptent sollicitudin. Nulla tortor purus posuere auctor himenaeos malesuada. Turpis phasellus enim venenatis aliquam pellentesque senecus, id ultrices. Praesent tellus consequat phasellus cubilia mattis mauris natoque litora. Fringilla cursus montes inceptos nec venenatis platea.</p>
+                </article>
+
+                <!-- The main image (cow) -->
+                <!-- 'figure' is good for images -->
+                <figure>
+                    <img src="images/COW.jpg" alt="A highland cow standing on a hill">
+                </figure>
+            </section>
+
+
+            <!-- Main gallery section -->
+            <section class="gallery">
+
+                <!-- Item 1: Video -->
+                <!-- The 'controls' attribute adds play/pause etc. -->
+                <figure class="gallery-item">
+                    <video controls>
+                        <source src="videos/video.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </figure>
+
+                <!-- Item 2: Train tracks image -->
+                <figure class="gallery-item">
+                    <img src="images/img4532.jpg" alt="Misty train tracks at night with lights">
+                </figure>
+
+                <!-- Item 3: Camera image -->
+                <figure class="gallery-item">
+                    <img src="images/img4598.jpg" alt="A vintage camera in front of a forest">
+                </figure>
+
+                <!-- Item 4: Mountains image -->
+                <figure class="gallery-item">
+                    <img src="images/photo_2018_02_01.jpg" alt="Snowy mountains with pine trees">
+                </figure>
+
+                <!-- Item 5: Hills image -->
+                <figure class="gallery-item">
+                    <img src="images/photo_2018_02_31.jpg" alt="Green rolling hills with a path">
+                </figure>
+
+                <!-- Item 6: Car image -->
+                <figure class="gallery-item">
+                    <img src="images/johns car jpg.jpg" alt="An old car covered in snow">
+                </figure>
+
+            </section>
+        </main>
+
+    </div> <!-- End of wrapper -->
+</body>
+
+</html>
