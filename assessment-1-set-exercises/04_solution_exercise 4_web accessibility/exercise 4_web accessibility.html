@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<!-- Tells the browser this is an HTML page -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Wondering Photographer - Blog</title>
+    <style>
+        /* --- General Page Styles --- */
+        body {
+            /* This apply fixes for the unreadable font and colours */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #ffffff; /* White background */
+            color: #333333; /* Dark grey text */
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* A wrapper to centre the page content */
+        .wrapper {
+            max-width: 800px;
+            margin: 0 auto; /* Centres the content */
+            padding: 20px;
+        }
+
+        /* --- Header Styles --- */
+        header {
+            /* Centring the divider */
+            text-align: center;
+            align-items: center;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eeeeee;
+            position: relative; /* Needed for the cart button */
+        }
+
+        /* Hides the divider from screen readers as it is a decorative element */
+        .decorative-divider {
+            height: 40px;
+        }
+
+        /* Makes the cart a proper button */
+        .cart-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 5px;
+            
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+
+            /* Animation */
+            transition: transform 0.2s ease;
+        }
+
+        .cart-button img {
+            width: 28px;
+            height: 28px;
+        }
+        
+        /* --- Main Content: Photo Gallery --- */
+        main {
+            padding-top: 30px;
+        }
+
+        .photo-gallery {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* Using 'figure' for the photo and its caption */
+        .photo-gallery figure {
+            margin: 0 0 40px 0;
+            border: 1px solid #dddddd;
+            border-radius: 8px;
+            overflow: hidden; /* Keeps the image corners rounded for visual appeal */
+        }
+
+        /* Makes sure images fill their container */
+        .photo-gallery img {
+            width: 100%;
+            display: block;
+        }
+
+        /* The caption area below the photo */
+        .photo-gallery figcaption {
+            padding: 20px;
+            background-color: #f9f9f9; /* Subtle background */
+        }
+
+        .photo-gallery p {
+            margin-top: 0;
+            margin-bottom: 20px;
+            /* Large and bold caption style */
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+
+        /* --- Accessible Button Styles --- */
+        .buy-button {
+            /* Makes this a big, clear button */
+            display: inline-block;
+            background-color: #4B0082; /* Accessible colour */
+            color: #ffffff;
+            padding: 12px 20px;
+            font-size: 1em;
+            font-weight: bold;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+
+            /* Animation */
+            transition: transform 0.2s ease;
+        }
+
+        /* --- Hover Animations added for additional requirements --- */
+        .buy-button:hover,
+        .cart-button:hover {
+            transform: scale(1.05) translateY(-2px);
+        }
+             
+        /* Adds a visible outline when using a keyboard */
+        /* Improves accessibility for keyboard users */
+        .buy-button:focus,
+        .cart-button:focus,
+        footer a:focus {
+            outline: 3px solid #300052; /* Updated focus colour */
+            outline-offset: 2px;
+        }
+        
+        /* --- Footer Styles --- */
+        footer {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid #eeeeee;
+            color: #777777;
+        }
+
+        /* Styles for the navigation links */
+        footer nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 0 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        footer nav a {
+            color: #4B0082; /* Accessible colour */
+            text-decoration: none;
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <header>
+            <!-- Decorative image with empty alt for screen readers to ignore it -->
+            <img src="images/TheDivider.png" alt="" role="presentation" class="decorative-divider">
+            
+            <!-- A proper button for the shopping basket added -->
+            <button class="cart-button" aria-label="View shopping basket, 0 items">
+                <img src="images/shopping.svg" alt="A button to view the shopping basket">
+            </button>
+        </header>
+
+        <main>
+            <ul class="photo-gallery">
+                
+                <li>
+                    <figure>
+                        <!-- alt text added which describes the image for screen readers -->
+                        <img src="images/OceanPhoto.jpg" alt="A person sits on the edge of a tall, white cliff overlooking a calm, blue ocean at sunrise.">
+                        <figcaption>
+                            <p>This was from a fabulous trip to the cost of Greenland with my family. The water was lovely- but very cold!</p>
+                            <button class="buy-button">Add to Basket</button>
+                        </figcaption>
+                    </figure>
+                </li>
+                
+                <li>
+                    <figure>
+                        <img src="images/BridgePhoto.jpg" alt="A low-angle shot of the red Golden Gate Bridge tower against a clear blue sky.">
+                        <figcaption>
+                            <p>A picture of the Golden Gate Bridge. New York! New York!</p>
+                            <button class="buy-button">Add to Basket</button>
+                        </figcaption>
+                    </figure>
+                </li>
+                
+                <li>
+                    <figure>
+                        <img src="images/ValleyPhoto.jpg" alt="A wide view of a bright blue river valley in Greenland, with backgrounds being mountains under a cloudy sky.">
+                        <figcaption>
+                            <p>Another great photo from Greenland. It's a river valley where a glacier used to be.</p>
+                            <button class="buy-button">Add to Basket</button>
+                        </figcaption>
+                    </figure>
+                </li>
+                
+                <li>
+                    <figure>
+                        <img src="images/WaterfallPhoto.jpg" alt="A beautiful waterfall pouring into a lake, surrounded by lush green moss on rocks.">
+                        <figcaption>
+                            <p>The waterfall made such a lovely sound. I could have fallen asleep!</p>
+                            <button class="buy-button">Add to Basket</button>
+                        </figcaption>
+                    </figure>
+                </li>
+
+            </ul>
+        </main>
+
+        <footer>
+            <p>Copyright The Wondering Photographer 2018.</p>
+            <!-- Navigation elements for the footer links -->
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">About me</a></li>
+                </ul>
+            </nav>
+        </footer>
+
+    </div> <!-- End of the wrapper -->
+</body>
+
+</html>
